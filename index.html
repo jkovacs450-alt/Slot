@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gengar Slot (Spicy Mode)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">👻</div>
+        <div>
+          <h1>Gengar Slot</h1>
+          <p class="sub">Spielgeld • 5 Walzen • Freispiele, Bonus, Autospin, Sounds • Cascading</p>
+        </div>
+      </div>
+
+      <div class="hud">
+        <div class="pill">
+          <span class="label">Währung</span>
+          <select id="currency">
+            <option value="EUR" selected>EUR €</option>
+            <option value="USD">USD $</option>
+            <option value="JPY">JPY ¥</option>
+          </select>
+        </div>
+
+        <div class="pill">
+          <span class="label">Balance</span>
+          <span id="balance">—</span>
+        </div>
+
+        <div class="pill">
+          <span class="label">Freispiele</span>
+          <span id="freespins">0</span>
+        </div>
+
+        <div class="pill">
+          <span class="label">Bonus</span>
+          <span id="bonus">—</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="machine">
+      <div class="frame">
+        <div class="reels" id="reels" aria-label="Slot Reels">
+          <div class="reel">
+            <div class="cell" data-pos="top"></div>
+            <div class="cell winline" data-pos="mid"></div>
+            <div class="cell" data-pos="bot"></div>
+          </div>
+          <div class="reel">
+            <div class="cell" data-pos="top"></div>
+            <div class="cell winline" data-pos="mid"></div>
+            <div class="cell" data-pos="bot"></div>
+          </div>
+          <div class="reel">
+            <div class="cell" data-pos="top"></div>
+            <div class="cell winline" data-pos="mid"></div>
+            <div class="cell" data-pos="bot"></div>
+          </div>
+          <div class="reel">
+            <div class="cell" data-pos="top"></div>
+            <div class="cell winline" data-pos="mid"></div>
+            <div class="cell" data-pos="bot"></div>
+          </div>
+          <div class="reel">
+            <div class="cell" data-pos="top"></div>
+            <div class="cell winline" data-pos="mid"></div>
+            <div class="cell" data-pos="bot"></div>
+          </div>
+        </div>
+
+        <div class="sparkles" aria-hidden="true"></div>
+        <div class="coins" id="coins" aria-hidden="true"></div>
+        <div class="banner" id="banner" aria-live="polite"></div>
+      </div>
+
+      <aside class="panel">
+        <h2>Kontrolle</h2>
+
+        <div class="row">
+          <label for="bet">Einsatz</label>
+          <select id="bet">
+            <option value="10">10</option>
+            <option value="25" selected>25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="autospins">Autospins</label>
+          <select id="autospins">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50" selected>50</option>
+            <option value="100">100</option>
+            <option value="999">∞</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="autospeed">Tempo</label>
+          <select id="autospeed">
+            <option value="250">Schnell</option>
+            <option value="450" selected>Normal</option>
+            <option value="700">Chill</option>
+          </select>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle">
+            <input id="stopBigWin" type="checkbox" checked />
+            <span>Stop Auto bei Big Win</span>
+          </label>
+          <label class="toggle">
+            <input id="stopBonus" type="checkbox" checked />
+            <span>Stop Auto bei Bonus</span>
+          </label>
+        </div>
+
+        <div class="row">
+          <button id="autoplay" class="btn ghost">AUTO: AUS</button>
+          <button id="sound" class="btn ghost">SOUND: AN</button>
+        </div>
+
+        <div class="row">
+          <button id="spin" class="btn">SPIN</button>
+          <button id="reset" class="btn ghost">Reset</button>
+        </div>
+
+        <div class="status">
+          <div class="msg" id="message">Bereit. Lass drehen 😈</div>
+          <div class="mini">
+            Lines: oben / mitte / unten (links→rechts). <br/>
+            👻 Scatter = Freispiele • 💎💎💎 = Bonusmode • 🔮 Wild ersetzt Symbole <br/>
+            Cascading: Gewinne platzen → neue droppen → evtl. Kettenwins
+          </div>
+        </div>
+
+        <h3>Auszahlungen</h3>
+        <ul class="payouts" id="payouts"></ul>
+
+        <p class="note">
+          Nur Spielgeld. Keine Echtgeld-Funktion. <br/>
+          Spacebar = Spin.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
